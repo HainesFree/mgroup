@@ -1,168 +1,238 @@
 <template>
-    <div class="container">
-      <div class="bg-all distance">
-      <div class="sq-dynamic">
-        <div class="dynamic-head">
-          <div class="dynamic-head-l"><img src="../assets/image/head.png" alt=""></div>
-          <div class="dynamic-head-r">
-            <h2>Rena</h2>
-            <p>2-23</p>
-          </div>
-        </div>
-        <div class="dynamic-content">
-          <div class="con-font">即使相隔光年，我们终能相遇。</div>
-          <div class="photo">
-            <div class="con-img"><img src="../assets/image/pada.png" alt=""></div>
-            <div class="con-img"><img src="../assets/image/pada.png" alt=""></div>
-            <div class="con-img"><img src="../assets/image/pada.png" alt=""></div>
-          </div>
-          <div class="con-footer">
-            <div class="dy-share"><img src="../assets/image/share.png" alt=""> <span>0</span></div>
-            <div class="dy-msg"><img src="../assets/image/img-msg.png" alt=""> <span>34</span></div>
-            <div class="dy-zan"><img src="../assets/image/heart.png" alt=""> <span>34</span></div>
-          </div>
-        </div>
+  <div class="container">
+    <div class="bg">
+      <!--头部导航-->
+      <div class="nav-title">
+        <div class="router-link-active">全部社群</div>
+        <div class="nav-item ">公益</div>
+        <div class="nav-item">其他</div>
       </div>
-
-        <div class="sq-dynamic">
-          <div class="dynamic-head">
-            <div class="dynamic-head-l"><img src="../assets/image/head.png" alt=""></div>
-            <div class="dynamic-head-r">
-              <h2>Rena</h2>
-              <p>2-23</p>
-            </div>
+      <!--内容列表-->
+      <div class="con-list">
+        <div class="list-img"><img src="../assets/image/head.png" alt=""></div>
+        <div class="list-detail">
+          <div class="fund">
+            <p>中国人口福利基金会</p>
+            <span class="good">公益</span> <span class="area">浙江 杭州</span>
           </div>
-          <div class="dynamic-content">
-            <div class="con-font">即使相隔光年，我们终能相遇。</div>
-            <div class="photo">
-              <div class="mov">我是电影模块</div>
-            </div>
-            <div class="con-footer">
-              <div class="dy-share"><img src="../assets/image/share.png" alt=""> <span>0</span></div>
-              <div class="dy-msg"><img src="../assets/image/img-msg.png" alt=""> <span>34</span></div>
-              <div class="dy-zan"><img src="../assets/image/heart.png" alt=""> <span>34</span></div>
-            </div>
-          </div>
+          <!--动态切换-->
+          <div class="attend" v-show="addAttend" @click="addControle">+关注</div>
+          <div class="already-attend" v-show="!addAttend" @click="addControle">√已关注</div>
         </div>
+        <div class="love-heart"><img src="../assets/image/heart.png" alt=""><span>902</span></div>
+      </div>
+      <!--内容列表-->
+      <div class="con-list">
+        <div class="list-img"><img src="../assets/image/head.png" alt=""></div>
+        <div class="list-detail">
+          <div class="fund">
+            <p>中国人口福利基金会</p>
+            <span class="good">公益</span> <span class="area">浙江 杭州</span>
+          </div>
+          <!--动态切换-->
+          <div class="attend" v-show="addAttend" @click="addControle">+关注</div>
+          <div class="already-attend" v-show="!addAttend" @click="addControle">√已关注</div>
+        </div>
+        <div class="love-heart"><img src="../assets/image/heart.png" alt=""><span>902</span></div>
+      </div>
+      <!--内容列表-->
+      <div class="con-list">
+        <div class="list-img"><img src="../assets/image/head.png" alt=""></div>
+        <div class="list-detail">
+          <div class="fund">
+            <p>中国人口福利基金会</p>
+            <span class="good">公益</span> <span class="area">浙江 杭州</span>
+          </div>
+          <!--动态切换-->
+          <div class="attend" v-show="addAttend" @click="addControle">+关注</div>
+          <div class="already-attend" v-show="!addAttend" @click="addControle">√已关注</div>
+        </div>
+        <div class="love-heart"><img src="../assets/image/heart.png" alt=""><span>902</span></div>
+      </div>
+      <!--内容列表-->
+      <div class="con-list">
+        <div class="list-img"><img src="../assets/image/head.png" alt=""></div>
+        <div class="list-detail">
+          <div class="fund">
+            <p>中国人口福利基金会</p>
+            <span class="good">公益</span> <span class="area">浙江 杭州</span>
+          </div>
+          <!--动态切换-->
+          <div class="attend" v-show="addAttend" @click="addControle">+关注</div>
+          <div class="already-attend" v-show="!addAttend" @click="addControle">√已关注</div>
+        </div>
+        <div class="love-heart"><img src="../assets/image/heart.png" alt=""><span>902</span></div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
     export default {
-        name: "group_list"
+        name: "group_list",
+        data(){
+          return {
+            addAttend:true
+          }
+        },
+        methods:{
+          addControle(){
+            this.addAttend=!this.addAttend
+          }
+        }
     }
 </script>
 
 <style scoped>
+  *{
+    box-sizing: border-box;
+  }
+  /*为路由动态切换准备的样式*/
+  .router-link-active{
+    height: 44px;
+    font: 16px/44px PingFang-SC;
+    color: #333333;
+    padding: 0 14px 0 14px;
+    font-weight: 800;
+    border-bottom: 1px solid #333333;
+
+  }
   .container{
+    position: absolute;
+    height: 100%;
+    width: 100%;
     background: #F8F8F8;
   }
-  .distance{
-    padding-left: .12rem;
+  .bg{
+    background: #ffffff;
   }
-  .dynamic-head{
+  .nav-title{
+    height: 44px;
     display: flex;
-    padding-bottom: .12rem;
-    background: #ffffff;
-  }
-  .dynamic-head-l{
     position: relative;
-    width: .4rem;
-    height: .4rem;
-    padding-right: .15rem;
+    justify-content: flex-start;
   }
-  .dynamic-head-l img{
-    position: absolute;
-    width: .38rem;
-    height: .38rem;
-  }
-  .dynamic-head-r h2{
-    font:700  .16rem PingFangSC ;
-    color: #333333;
-  }
-  .dynamic-head-r p{
-    font: .12rem PingFangSC;
-    color: #999999;
-  }
-  .bg-all{
-    background: #ffffff;
-  }
-  .sq-dynamic{
-      margin-bottom: .08rem;
-     }
-  .photo{
-    width: 100%;
-    overflow: hidden;
-    background: #ffffff;
-  }
-  .con-font{
-    padding-bottom: .08rem;
-    font: .15rem PingFangSC;
-    color: #444444;
-    background: #ffffff;
-  }
-  .con-img img{
-    width: 1.14rem;
-    height: 1.14rem;
-    float: left;
-    padding:0 .05rem .05rem 0;
-  }
-  .con-footer{
-    position: relative;
-    height: .45rem;
-    margin: .1rem .12rem 0 0;
-    background: #ffffff;
-    display: flex;
-    justify-content: space-between;
-  }
-  .con-footer::after{
+  .nav-title::after {
     content: " ";
     width: 100%;
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
     border-bottom: 1px solid #EEEEEE;
     -webkit-transform: scaleY(.5);
     transform: scaleY(.5);
   }
-  .dy-share{
-    margin-left: .33rem;
+  .nav-title .nav-item{
+    height: 44px;
+    font: 16px/44px PingFang-SC;
+    color: #333333;
+    padding: 0 14px 0 14px;
   }
-  .dy-zan{
-    margin-right: .33rem;
+  .con-list{
+    height: 86px;
+    width: 100%;
+    display: flex;
+    position: relative;
+    padding: 0 12px 0 12px;
   }
-  .dy-share img{
-    width: .14rem;
-    height: .14rem;
+  .con-list::after {
+    content: " ";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 1px solid #EEEEEE;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
   }
-  .dy-share span{
+  .con-list:last-child::after {
+    content: " ";
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    border-bottom: 0 solid #EEEEEE;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+  }
+  .love-heart{
+    position: absolute;
+    left: 12px;
+    bottom: 14px;
+    height: 16px;
+    width: 55px;
+    text-align: center;
+    font-size: 0;
+    padding-top: 1px;
+    background: #FFF2F0;
+    border-radius: 5px;
+    border: 1px solid #FE7272;
+  }
+  .love-heart span{
     display: inline-block;
-    font: .14rem/.45rem PingFangSC;
-    color: #999999;
+    font: 12px/12px PingFangSC;
+    color: #666666;
   }
-  .dy-msg img{
-    width: .18rem;
-    height: .15rem;
+  .love-heart img{
+    width: 12px;
+    height: 12px;
+    vertical-align: top;
   }
-  .dy-msg span{
+  .list-detail{
+    width: 100%;
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .list-img{
+    width: 55px;
+    height: 55px;
+    margin: 14px 14px 0 0;
+  }
+  .list-img img{
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+  }
+  .fund p{
+    font: 16px/32px PingFangSC;
+    color: #333333;
+    margin-bottom: 3px;
+  }
+  .fund .good{
     display: inline-block;
-    font: .14rem/.45rem PingFangSC;
-    color: #999999;
+    height: 18px;
+    padding: 0 6px 0 6px;
+    font: 12px/18px PingFangSC;
+    color:#F8C822;
+    border: 1px solid #F8C822;
+    border-radius: 5px;
+
   }
-  .dy-zan span{
+  .fund .area{
     display: inline-block;
-    font: .14rem/.45rem PingFangSC;
+    height: 18px;
+    /*padding: 0 6px 0 6px;*/
+    font: 12px/18px PingFangSC;
+    color:#808080;
+    margin-left: 6px;
+  }
+  .attend{
+    height: 25px;
+    margin-top: 15px;
+    padding: 0 6px 0 6px  ;
+    font: 13px/25px PingFangSC;
+    color: #FF7272;
+    border: 1px solid #FF7272;
+    border-radius: 5px;
+  }
+  .already-attend{
+    height: 25px;
+    margin-top: 15px;
+    padding: 0 6px 0 6px  ;
+    font: 13px/25px PingFangSC;
     color: #999999;
-  }
-  .dy-zan img{
-    width: .15rem;
-    height: .14rem;
-  }
- /*电影*/
-  .mov{
-    width: 3.51rem;
-    height: 1.61rem;
-    background: lightpink;
+    border: 1px solid #999999;
+    border-radius: 5px;
   }
 </style>
