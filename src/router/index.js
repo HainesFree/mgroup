@@ -5,7 +5,6 @@ import Care from '@/components/care';
 import CreateGroup from '@/components/create_group';
 import GroupList from '@/components/group_list';
 import GroupCover from '@/components/group_cover';
-import Demo from "@/components/demo"
 
 Vue.use(Router)
 
@@ -35,11 +34,6 @@ export default new Router({
       path: '/cover',
       name: 'GroupCover',
       component: GroupCover
-    },
-    {
-      path: '/demo',
-      name: 'Demo',
-      component: Demo
     }
   ]
 })
